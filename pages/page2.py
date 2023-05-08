@@ -10,6 +10,7 @@ from app import app
 ### Page 2 layout and callback ###
 layout = html.Div(
     children = [
+        dcc.Link(children='Go to page 1', href='/page-1'),
         html.H1("page 2"),
         dcc.RadioItems(
             id='page-2-radios',
@@ -17,10 +18,7 @@ layout = html.Div(
             value='Orange'
         ),
         html.Div(id='page-2-content'),
-        html.Br(),
-        dcc.Link(children='Go to page 1', href='/page-1'),
-        html.Br(),
-        dcc.Link('Go to home', href='/')
+        html.Br()
     ]
 )
 

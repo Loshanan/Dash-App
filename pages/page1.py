@@ -10,6 +10,7 @@ from app import app
 ### Page 1 layout and callback ###
 layout = html.Div(
     children=[
+        dcc.Link(children='Go to page 2', href='/page-2'),
         html.H1("page 1"),
         dcc.Dropdown(
             id='page-1-dropdown',
@@ -17,10 +18,7 @@ layout = html.Div(
             value='Kothavari',
         ),
         html.Div(id='page-1-content'),
-        html.Br(),
-        dcc.Link(children='Go to page 2', href='/page-2'),
-        html.Br(),
-        dcc.Link(children='Go to home', href='/')
+        html.Br()
     ]
 )
 

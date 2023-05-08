@@ -11,20 +11,11 @@ from pages import page1, page2
 ### page container ###
 page_container = html.Div(
     children=[
-        # represent url bar
+        # represents the URL bar, doesn't render anything
         dcc.Location(id='url', refresh=False),
 
         # content will be rendered in this element
         html.Div(id='page-content')
-    ]
-)
-
-### Index page layout ###
-Index_layout =  html.Div(
-    children=[
-        dcc.Link(children='Go to page 1', href='/page-1'),
-        html.Br(),
-        dcc.Link(children='Go to page 2', href='/page-2')
     ]
 )
 
@@ -34,7 +25,7 @@ app.layout = page_container
 app.validation_layout = html.Div(
     children=[
         page_container,
-        Index_layout,
+        #Index_layout,
         page1.layout,
         page2.layout
     ]
@@ -46,9 +37,9 @@ app.validation_layout = html.Div(
     [Input('url', 'pathname')]
 )
 def displaypage(pathname):
-    if pathname == '/':
-        return Index_layout
-    elif pathname == '/page-1':
+    # if pathname == '/':
+    #     return Index_layout
+    if pathname == '/page-1':
         return page1.layout
     elif pathname == '/page-2':
         return page2.layout
