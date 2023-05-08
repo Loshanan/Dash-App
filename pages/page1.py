@@ -14,8 +14,8 @@ layout = html.Div(
         html.H1("page 1"),
         dcc.Dropdown(
             id='page-1-dropdown',
-            options=[{'label':i, 'value':i} for i in ['Kothavari', 'Erumai', 'Kaluthai']],
-            value='Kothavari',
+            options=[{'label':i, 'value':i} for i in ['Dog', 'Cat', 'Cow']],
+            value='Dog',
         ),
         html.Div(id='page-1-content'),
         html.Br()
